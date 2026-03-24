@@ -87,8 +87,132 @@ print(nostarch_url)  # 输出完整的URL
 print(nostarch_url.removeprefix("https://"))  # 删除URL的前缀
 print(nostarch_url.removeprefix("http://"))  # 删除URL的前缀（没有效果，因为URL的前缀是https://）
 
+# 删除后缀
+# 既然有删除前缀就有对应的删除后缀
+print(nostarch_url.removesuffix(".com"))  # 删除URL的后缀
 
-# 第三章
+
+# 如何在使用字符串时避免语法错误
+# 如何在字符串中使用单引号或双引号
+# 1. 使用双引号包裹字符串，字符串中可以包含单引号
+message = "One of Python's strengths is its diverse community."
+print(message)  # 输出字符串，包含单引号
+# 2. 使用单引号包裹字符串，字符串中可以包含双引号
+message = 'She said, "Python is my favorite language!"'
+print(message)  # 输出字符串，包含双引号
+# 3. 使用转义字符（\）来在字符串中包含引号
+message = 'It\'s important to escape characters in strings.'
+print(message)  # 输出字符串，包含单引号
+message = "She said, \"Python is my favorite language!\""
+print(message)  # 输出字符串，包含双引号
+
+# 数
+
+# 整数
+# 整数 数据处理逻辑 + - * /
+print(2 + 3)  # 输出5
+print(10 - 4)  # 输出6
+print(5 * 6)  # 输出30
+print(8 / 2)  # 输出4.0
+print(8 // 2)  # 输出4，整数除法（floor division）
+print(7 // 3)  # 输出2，整数除法（floor division）
+print(7 % 3)  # 输出1，取模（modulo）运算，返回除法的余数
+print(2 ** 3)  # 输出8，幂运算，2的3次方
+print( (2 + 3) * 4) # 输出20，使用括号改变运算顺序
+
+# 浮点数
+# 浮点数 是带有小数部分的数字，使用小数点来表示
+print(0.1 + 0.2)  # 输出0.30000000000000004，浮点数的精度问题
+print(3.14 * 2)  # 输出6.28，浮点数的乘法运算
+print(5.0 / 2)  # 输出2.5，浮点数的除法运算
+print(5.0 // 2)  # 输出2.0，浮点数的整数除法（floor division）
+print(5.0 % 2)  # 输出1.0，浮点数的取模（modulo）运算
+print(2.5 ** 3)  # 输出15.625，浮点数的幂运算，2.5的3次方
+
+# 任意两个数相除，结果总是一个浮点数
+print(5 / 2)  # 输出2.5，整数除法的结果
+print(5.0 / 2)  # 输出2.5，浮点数除法的结果
+print(5 / 2.0)  # 输出2.5，浮点数除法的结果
+print(5.0 / 2.0)  # 输出2.5，浮点数除法的结果
+
+# 数字运算中，又一个操作数是浮点数，结果也总是一个浮点数
+print(5 + 2.0)  # 输出7.0，整数和浮点数的加法运算
+print(5 - 2.0)  # 输出3.0，整数和浮点数的减法运算
+print(5 * 2.0)  # 输出10.0，整数和浮点数的乘法运算
+print(5 / 2.0)  # 输出2.5，整数和浮点数的除法运算
+print(5 // 2.0)  # 输出2.0，整数和浮点数的整数除法
+
+# 数字中的下划线
+# 在数字中使用下划线可以提高可读性，Python会忽略下划线
+universe_age = 14_000_000_000  # 使用下划线来分隔数字，提高可读性
+print(universe_age)  # 输出140000000000，Python会忽略下划线
+
+# 同时给多个变量赋值
+x, y, z = 0, 0, 0
+print(x,y,z)
+
+# 常量
+# 在程序的整个生命周期内都保持不变的变量
+# python没有内置的常量类型
+# 约定俗成的做法是使用全大写字母来命名常量，以表示它们不应该被修改
+MAX_CONNECTIONS = 100  # 定义一个常量，表示最大连接数
+print(MAX_CONNECTIONS)  # 输出100
+
+# 注释
+# 井号后面到行尾的内容都是注释，注释是给人看的，不会被python解释器执行
+# 这是一个单行注释，解释代码的作用
+print("Hello, World!")  # 这是一个行内注释，解释这一行代码的作用
+
+# 注释的目的/作用
+# 1. 解释代码的作用，帮助自己和他人理解代码
+# （阐述代码要做什么，以及是如何做的）
+# 2. 提供额外的信息，如作者、日期、版本等
+# 3. 临时禁用代码，调试代码时使用
+# print("This line is commented out and will not be executed.")
+
+# Python之禅
+# Python之禅是Python的设计哲学，包含了19条指导原则，由Tim Peters在1999年提出，旨在指导Python的设计和开发
+# Python之禅的内容如下：
+# 1. 美丽胜于丑陋
+# 2. 明了胜于晦涩
+# 3. 简洁胜于复杂
+# 4. 复杂胜于凌乱
+# 5. 扁平胜于嵌套
+# 6. 稀疏胜于密集
+# 7. 可读性很重要
+# 8. 特例不特例到足以破坏规则
+# 9. 虽然实用性胜于纯粹性，但不要牺牲美丽和明了
+# 10. 错误永远不应该悄无声息地过去
+# 11. 除非明确地沉默了它们
+# 12. 面对模棱两可的情况，拒绝猜测的诱惑
+# 13. 应该有一种--而且最好只有一种--明显的方式来做一件事
+# 14. 虽然这并不适用于所有情况
+# 15. 做也比不做好
+# 16. 如果实现很难解释，那一定是个坏主意
+# 17. 如果实现很容易解释，那可能是个好主意
+# 18. 命名空间是一种绝妙的主意，我们应该多加利用它
+
+# Python之缠英文
+# Simple is better than complex.
+# Complex is better than complicated.
+# Readability counts.
+# Errors should never pass silently.
+# Now is better than never.
+
+# 简单点
+# 现在就做
+
+
+# 第三章 列表
+
+
+
+
+
+
+
+
+
 # 第四章
 # 第五章
 # 第六章

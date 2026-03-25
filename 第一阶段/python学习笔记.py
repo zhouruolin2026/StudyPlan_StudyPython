@@ -206,14 +206,119 @@ print("Hello, World!")  # 这是一个行内注释，解释这一行代码的作
 # 第三章 列表
 
 
+# 列表list
+# 由一系列特定顺序排列的元素组成
+
+# * 有序
+# * 可变
+# * 允许重复元素
+
+# 列表使用方括号（[]）来创建，元素之间用逗号分隔
+bicycles = ['trek', 'cannondale', 'redline', 'specialized']
+print(bicycles)  # 输出列表
+print(bicycles[0])  # 输出列表的第一个元素，索引从0开始
+print(bicycles[1])  # 输出列表的第二个元素
+print(bicycles[2])  # 输出列表的第三个元素
+print(bicycles[3])  # 输出列表的第四个元素
+
+# 索引从0开始
+
+# 修改、添加和删除元素
+
+# 修改列表元素
+motorcycles = ['honda', 'yamaha', 'suzuki']
+print(motorcycles)  # 输出列表
+motorcycles[0] = 'ducati'  # 修改列表的第一个元素
+print(motorcycles)  # 输出修改后的列表
+
+# 在列表中添加元素
+# 在列表末尾添加元素
+# 使用append()方法在列表末尾添加元素
+motorcycles.append('ducati')  # 在列表末尾添加元素
+print(motorcycles)  # 输出修改后的列表
+
+# 创建一个空列表
+motorcycles = []  # 创建一个空列表
+
+motorcycles.append('honda')  # 在列表末尾添加元素
+motorcycles.append('yamaha')  # 在列表末尾添加元素
+motorcycles.append('suzuki')  # 在列表末尾添加元素
+print(motorcycles)  # 输出列表
+
+# 在列表中插入元素
+# 使用insert()方法在列表的指定位置插入元素
+motorcycles.insert(0, 'ducati')  # 在列表的第一个位置插入元素
+print(motorcycles)  # 输出修改后的列表
+
+# 从列表中删除元素
+# 使用del语句根据索引删除列表中的元素
+del motorcycles[0]  # 删除列表的第一个元素
+print(motorcycles)  # 输出修改后的列表
+# 使用pop()方法根据索引删除列表中的元素，并返回被删除的元素
+popped_motorcycle = motorcycles.pop(0)  # 删除列表的第一个元素，并返回被删除的元素
+print(motorcycles)  # 输出修改后的列表
+print(popped_motorcycle)  # 输出被删除的元素
+# pop()方法默认删除列表中的最后一个元素
+last_owned = motorcycles.pop()  # 删除列表中的最后一个元素，并返回被删除的元素
+print(motorcycles)  # 输出修改后的列表
+print(last_owned)  # 输出被删除的元素
+# 使用remove()方法根据值删除列表中的元素
+motorcycles.remove('yamaha')  # 删除列表中值为'suzuki'的元素
+print(motorcycles)  # 输出修改后的列表
+
+# 管理列表
+# 使用sort()方法永久排序列表
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)  # 输出原始列表
+cars.sort()  # 永久排序列表，默认升序
+print(cars)  # 输出排序后的列表
+cars.sort(reverse=True)  # 永久排序列表，降序
+print(cars)  # 输出排序后的列表
+
+# 使用sorted()函数临时排序列表
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print("Here is the original list:")
+print(cars)  # 输出原始列表
+print("\nHere is the sorted list:")
+print(sorted(cars))  # 输出临时排序后的列表，默认升序
+print("\nHere is the original list again:")
+print(cars)  # 输出原始列表，未被修改
+# sorted() 函数降序排序
+print("\nHere is the sorted list in reverse:")
+print(sorted(cars, reverse=True))  # 输出临时排序后的列表，降序
+
+# 反向打印列表 - 永久修改列表的顺序
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(cars)  # 输出原始列表
+cars.reverse()  # 反向列表
+print(cars)  # 输出反向后的列表
+
+# 确定列表的长度
+cars = ['bmw', 'audi', 'toyota', 'subaru']
+print(len(cars))  # 输出列表的长度
+
+# !!!！！！
+# 使用列表时避免索引错误
+# 索引错误是指访问列表中不存在的索引位置时发生的错误
+# 1. 确保索引在列表的范围内
+# 2. 使用负数索引访问列表中的元素，负数索引从列表的末尾开始计数，-1表示最后一个元素，-2表示倒数第二个元素，以此类推
+# 3. 使用len()函数获取列表的长度
+# 4. 使用条件语句检查索引是否在列表的范围内
+my_list = ['a', 'b', 'c']
+index = 3
+if index < len(my_list):
+    print(my_list[index])  # 输出列表中的元素
+else:
+    print("Index out of range")  # 输出索引超出范围的提示信息
+
+
+# 第四章 操作列表
 
 
 
 
 
 
-
-# 第四章
 # 第五章
 # 第六章
 # 第七章

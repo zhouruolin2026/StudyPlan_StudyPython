@@ -315,6 +315,33 @@ else:
 # 第四章 操作列表
 
 
+# 增 append(), insert()
+# 删 del l[0], pop(i), remove('a')
+# 改 l[0] = 0
+# 查 l[i]
+
+# 遍历整个列表
+# 使用for循环，可以让Python去处理每个元素
+
+magicians = ['alice', 'david', 'carolina']
+for magician in magicians:
+    print(magician)
+
+# 深入研究循环
+# 循环很重要！是python完成重复工作的常见方式之一
+
+# 在for循环中执行更多的操作
+# 在for循环中，可以对每个元素执行任意操作
+
+magicians = ['alice', 'david', 'carolina']
+for magician in magicians:
+    print(f"{magician.title()}, that was a great trick!")
+
+
+
+
+
+
 
 
 

@@ -332,21 +332,126 @@ for magician in magicians:
 
 # 在for循环中执行更多的操作
 # 在for循环中，可以对每个元素执行任意操作
+# 在for循环中，想包含多少代码都可以
 
 magicians = ['alice', 'david', 'carolina']
 for magician in magicians:
     print(f"{magician.title()}, that was a great trick!")
 
+for magician in magicians:
+    print(f"{magician.title()}, that was a great trick!")
+    print(f"I can't wait to see your next trick, {magician.title()}.\n")
+
+# for循环
+# 不在for循环中的代码不会循环，只会执行一次
+for magician in magicians:
+    print(f"{magician.title()}, that was a great trick!")
+
+print("Thank you, everyone. That was a great magic show!")
+
+# 避免缩进错误
+# 在代码块中的代码要缩进
+# 不在代码块中的代码不要缩进
+# 缩进错了就麻烦了哦
+
+# 不要遗漏冒号
+
+# 创建数值列表
+# 使用range()函数创建数值列表
+# range()函数可以生成一个整数序列
+for value in range(1, 5):
+    print(value)  # 输出1到4的整数，range()函数生成的序列不包括结束值
+
+# 打印数字1～5，需要使用range(1, 6)
+for value in range(1, 6):
+    print(value)  # 输出1到5的整数
+
+# 使用range()创建数值列表
+numbers = list(range(1, 6))  # 使用range()函数创建一个包含1到5的整数的列表
+print(numbers)  # 输出列表
+# 指定步长
+even_numbers = list(range(2, 11, 2))  # 使用range()函数创建一个包含2到10的偶数的列表，步长为2
+print(even_numbers)  # 输出列表
+
+squares = []
+for value in range(1, 11):
+    square = value ** 2  # 计算value的平方
+    squares.append(square)  # 将square添加到squares列表中
+
+print(squares)
+
+# 对数值列表执行简单的统计计算
+digits = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(min(digits))  # 输出列表中的最小值
+print(max(digits))  # 输出列表中的最大值
+print(sum(digits))  # 输出列表中所有值的总和
+
+# 列表推导式
+# 好用
+# 但不推荐
+# 原因：到高手了再用
+
+squares = [value ** 2 for value in range(1, 11)]  # 使用列表推导式创建一个包含1到10的整数的平方的列表
+print(squares)  # 输出列表
+
+# 使用列表中的一部分
+# 切片
+# 切片是指从列表中提取出一个子列表，使用冒号（:）来指定切片的起始和结束位置
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players[0:3])  # 输出列表的前3个元素，索引从0开始，切片不包括结束索引
+print(players[1:4])  # 输出列表的第2到第4个元素，切片不包括结束索引
+print(players[:4])  # 输出列表的前4个元素，切片不包括结束索引
+print(players[2:])  # 输出列表的第3个元素到最后一个元素
+print(players[-3:])  # 输出列表的最后3个元素
+
+l = [1]
+print(l[-3:]) # 这个不会报错
+
+# 遍历切片
+players = ['charles', 'martina', 'michael', 'florence', 'eli']
+print(players)
+print("Here are the first three players on my team:")
+for player in players[:3]:  # 遍历列表的前3个元素
+    print(player.title())  # 输出玩家的名字，首字母大写
+
+# 复制列表
+my_foods = ['pizza', 'falafel', 'carrot cake']
+friend_foods = my_foods[:]  # 使用切片创建my_foods列表的副本
+print("My favorite foods are:")
+print(my_foods)  # 输出my_foods列表
+
+# 元组
+# 元组 tuple
+# 元组是由一系列特定顺序排列的元素组成的不可变序列
+# 元组使用圆括号（()）来创建，元素之间用逗号分隔
+dimensions = (200, 50)  # 创建一个包含两个元素的元组
+print(dimensions[0])  # 输出元组的第一个元素，索引从0开始
+print(dimensions[1])  # 输出元组的第二个元素
+
+# 元组
+# 元组除了不能改变，别的和列表基本一样
+
+# 元组
+# 元组使用逗号标识的
+# 圆括号只是装饰品
+
+a = 1, 2, 3
+print(a)  # 输出元组
+a = 1,
+print(a)  # 输出元组
+a = (1,)
+print(a)  # 输出元组
+
+# python使用好的习惯，行长80个字符，超过了就换行
+for i in range(1, 200):
+    print(i, end='')  # 输出1，end=''表示不换行
+
+
+# 第五章 if语句
 
 
 
 
-
-
-
-
-
-# 第五章
 # 第六章
 # 第七章
 # 第八章

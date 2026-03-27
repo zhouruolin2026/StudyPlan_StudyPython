@@ -450,9 +450,136 @@ for i in range(1, 200):
 # 第五章 if语句
 
 
+# if语句让你能够检查程序的当前状态，并采取相应的措施
+# if语句的基本结构
+# if condition:
+#     # 执行的代码块
+# condition是一个表达式，返回True或False
+# 如果condition为True，执行代码块；如果condition为False，跳过代码块
+cars = ['audi', 'bmw', 'subaru', 'toyota']
+for car in cars:
+    if car == 'bmw':  # 条件判断
+        print(car.upper())  # 如果条件为True，输出大写的车名
+    else:
+        print(car.title())  # 如果条件为False，输出首字母大写的车名
+
+# 条件测试
+# 条件测试是if语句的核心，条件测试是一个表达式，返回True或False
+# 条件测试的类型
+# 1. 比较操作符：==、!=、>、<、>=、<=
+# 2. 逻辑操作符：and、or、not
+# 3. 成员测试：in、not in
+# 4. 身份测试：is、is not
+print(1 == 2)
+print(1 != 2)
+print(1 > 2)
+print(1 < 2)
+
+# 检查是否不等
+# 不等运算符：!=
+requested_topping = 'mushrooms'
+if requested_topping != 'anchovies':  # 条件测试，检查requested_topping是否不等于'anchovies'
+    print("Hold the anchovies!")  # 如果条件为True，输出提示信息
+
+# 检查多个条件
+# 逻辑操作符：and、or、not
+age_0 = 22
+age_1 = 18
+print(age_0 >= 21 and age_1 >= 21)  # 输出False
+print(age_0 >= 21 or age_1 >= 21)  # 输出True
+
+# 检查特定的值是否在列表中
+# 成员测试：in、not in
+requested_toppings = ['mushrooms', 'onions', 'pineapple']
+print('mushrooms' in requested_toppings)  # 输出True
+print('pepperoni' in requested_toppings)  # 输出False
+
+# 布尔表达式
+# 布尔表达式是一个条件测试，返回True或False
+# 1. 比较操作符：==、!=、>、<、>=、<=
+# 2. 逻辑操作符：and、or、not
+# 3. 成员测试：in、not in
+# 4. 身份测试：is、is not
+
+# if语句
+# 简单的if语句
+# if conditional_test:
+#     do something
+age = 19
+if age >= 18:
+    print("You are old enough to vote!")  # 如果条件为True，输出提示信息
+
+age = 19
+if age >= 18:
+    print("You are old enough to vote!")  # 如果条件为True，输出提示信息
+    print("Have you registered to vote yet?")  # 如果条件为True，输出提示信息
+    # 这两行代码都在if语句的代码块中，当条件为True时都会执行
+
+# if-else语句
+# if conditional_test:
+#     do something
+# else:
+#     do something else
+age = 17
+if age >= 18:
+    print("You are old enough to vote!")  # 如果条件为True，输出提示信息
+else:
+    print("Sorry, you are too young to vote.")  # 如果条件为False，输出提示信息
+
+# if-elif-else语句
+# if conditional_test1:
+#     do something
+# elif conditional_test2:
+#     do something else
+# else:
+#     do something else
+age = 12
+if age < 4:
+    print("Your admission cost is $0.")  # 如果条件为True，输出提示信息
+elif age < 18:
+    print("Your admission cost is $5.")  # 如果条件为True，输出提示信息
+else:
+    print("Your admission cost is $10.")  # 如果条件为False，输出提示信息
+
+# if语句 - 只会执行第一个条件测试为真对应的代码块
+# if-elif-else结构中，Python从上到下检查每个条件测试，直到找到第一个为True的条件测试，然后执行对应的代码块，并跳过剩下的条件测试和代码块
+
+# if语句 - 最简单的写法可以只有if条件判断及条件判断为True对应的代码块
+
+# 使用if语句处理列表
+# 检查特殊元素
+requested_toppings = ['mushrooms', 'extra cheese']
+if 'mushrooms' in requested_toppings:
+    print("Adding mushrooms.")  # 如果条件为True，输出提示信息
+if 'pepperoni' in requested_toppings:
+    print("Adding pepperoni.")  # 如果条件为True，输出提示信息
+
+# 确定列表非空
+requested_toppings = []
+if requested_toppings:  # 条件测试，检查requested_toppings列表是否非空
+    print("Adding requested toppings:")  # 如果条件为True，输出提示信息
+    for requested_topping in requested_toppings:
+        print(f"\t{requested_topping}")  # 输出每个请求的配料
+else:
+    print("Are you sure you want a plain pizza?")  # 如果条件为False，输出提示信息
+
+# 设置if语句的格式
+# 1. 每个if、elif和else关键字都应该单独占一行
+# 2. 每个条件测试后面都应该有一个冒号
+# 3. 条件测试的代码块应该缩进，通常使用4个空格
+# 4. 在条件测试的代码块中，应该使用空行来分隔不同的代码块，以提高代码的可读性
+# if age < 4:
+# 优于： if age<4:
 
 
-# 第六章
+# 第六章 字典
+
+
+
+
+
+
+
 # 第七章
 # 第八章
 # 第九章

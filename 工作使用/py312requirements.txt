@@ -1,0 +1,37 @@
+# 数据库连接
+gaussdb[dev,pool]  # 高斯数据库 (官方推荐适配器)
+psycopg2-binary # 兼容高斯数据库
+psycopg[binary] # 兼容高斯数据库
+pyhive[hive_pure_sasl]     # Hive 连接 (含依赖)
+# impyla           # Impala 连接
+thriftpy2           # Hive 依赖
+# thrift-sasl      # Hive 依赖
+pure-sasl       # Hive 依赖
+sqlalchemy
+
+# Linux/SSH 远程连接
+paramiko         # Linux/SSH 远程连接
+fabric       # Linux/SSH 远程连接
+python-dotenv
+
+invoke
+scp
+
+
+# 数据处理与读取
+pandas
+numpy
+polars
+openpyxl         # 读取 .xlsx 文件的引擎
+xlsxwriter
+fastexcel
+pyarrow
+connectorx
+python-calamine
+
+# Web 开发与工具
+fastapi
+uvicorn # fastapi 运行所需的服务器
+jupyterlab
+
+pyinstaller

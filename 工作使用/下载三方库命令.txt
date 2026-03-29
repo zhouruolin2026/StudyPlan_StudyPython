@@ -1,0 +1,12 @@
+python -m pip download -r requirements.txt -d ./offline_packages --only-binary=:all: --platform win_amd64 --python-version 312 --implementation cp
+
+
+mkdir offline_packages
+pip download -r requirements.txt -d offline_packages --only-binary=:all: --platform win_amd64 --python-version 312
+
+
+python -m pip download -r py39requirements.txt -d ./py39offline_packages --only-binary=:all: --platform win_amd64 --python-version 39
+
+python -m pip download -r py312requirements.txt -d ./py312offline_packages --only-binary=:all: --platform win_amd64 --python-version 312
+
+python -m pip download -r py312requirements.txt -d ./py312offline_packages2 --only-binary=:all: --platform win_amd64 --python-version 312

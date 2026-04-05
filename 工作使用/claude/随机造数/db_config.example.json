@@ -1,0 +1,8 @@
+{
+  "_comment": "高斯数据库连接配置，复制此文件为 db_config.json 并填入真实信息",
+  "host": "your-gaussdb-host",
+  "port": 5432,
+  "database": "your_database",
+  "user": "your_user",
+  "password": "your_password"
+}

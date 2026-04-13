@@ -8,22 +8,21 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: Arial, sans-serif; background: #f0f2f5; height: 100vh; display: flex; flex-direction: column; }
 
-        .top-bar { padding: 12px 20px; background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; gap: 20px; }
+        .top-bar { padding: 12px 20px; background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .site-title { font-size: 15px; font-weight: bold; color: #333; }
+        .nav-links { display: flex; gap: 20px; }
         .top-bar a { color: #4f8ef7; text-decoration: none; font-size: 14px; }
         .top-bar a:hover { text-decoration: underline; }
 
         .content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-        .top-bar { padding: 12px 20px; background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
-.site-title { font-size: 15px; font-weight: bold; color: #333; }
-.nav-links { display: flex; gap: 20px; }
-.top-bar a { color: #4f8ef7; text-decoration: none; font-size: 14px; }
-.top-bar a:hover { text-decoration: underline; }
+        .toolbar { width: 90%; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .toolbar span { font-size: 14px; color: #555; white-space: nowrap; }
+        .toolbar input { padding: 8px 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; width: 160px; }
 
-        /* 按钮颜色区分 */
         .btn { padding: 8px 18px; border: none; border-radius: 6px; font-size: 14px; cursor: pointer; white-space: nowrap; }
-        .btn-blue  { background: #4f8ef7; color: white; }
-        .btn-blue:hover  { background: #2f6fd4; }
+        .btn-blue { background: #4f8ef7; color: white; }
+        .btn-blue:hover { background: #2f6fd4; }
         .btn-green { background: #52c41a; color: white; }
         .btn-green:hover { background: #389e0d; }
         .btn-orange { background: #fa8c16; color: white; }
@@ -33,7 +32,6 @@
         textarea { width: 90%; height: 80vh; padding: 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; resize: none; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.06); outline: none; }
         textarea:focus { border-color: #4f8ef7; }
 
-        /* 提示 toast */
         .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 8px 20px; border-radius: 20px; font-size: 13px; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
         .toast.show { opacity: 1; }
     </style>
@@ -61,7 +59,7 @@
     <div class="toast" id="toast"></div>
 
     <script>
-        let lastSnapshot = null;  // 存储最近一次替换前的内容
+        let lastSnapshot = null;
 
         function showToast(msg) {
             const t = document.getElementById('toast');
@@ -75,31 +73,27 @@
             if (!date) { showToast('请先输入跑批日期'); return; }
             const ta = document.getElementById('mainText');
             if (!ta.value) { showToast('文本框内容为空'); return; }
-
-            lastSnapshot = ta.value;                        // 替换前先存快照
+            lastSnapshot = ta.value;
             document.getElementById('undoBtn').disabled = false;
-
             ta.value = ta.value.replaceAll('跑批日期', date);
             showToast('替换完成');
         }
 
         function copyText() {
-    const ta = document.getElementById('mainText');
-    if (!ta.value) { showToast('文本框内容为空'); return; }
-
-    // 优先用现代 API，失败则降级到 execCommand
-    if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(ta.value)
-            .then(() => showToast('已复制到剪切板'))
-            .catch(() => showToast('复制失败，请手动复制'));
-    } else {
-        ta.select();
-        ta.setSelectionRange(0, 99999); // 兼容移动端
-        const ok = document.execCommand('copy');
-        window.getSelection()?.removeAllRanges();
-        showToast(ok ? '已复制到剪切板' : '复制失败，请手动复制');
-    }
-}
+            const ta = document.getElementById('mainText');
+            if (!ta.value) { showToast('文本框内容为空'); return; }
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(ta.value)
+                    .then(() => showToast('已复制到剪切板'))
+                    .catch(() => showToast('复制失败，请手动复制'));
+            } else {
+                ta.select();
+                ta.setSelectionRange(0, 99999);
+                const ok = document.execCommand('copy');
+                window.getSelection()?.removeAllRanges();
+                showToast(ok ? '已复制到剪切板' : '复制失败，请手动复制');
+            }
+        }
 
         function undoReplace() {
             if (lastSnapshot === null) return;

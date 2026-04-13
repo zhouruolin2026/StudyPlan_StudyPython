@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>页面二</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 0; }
+        .top-bar { padding: 12px 20px; background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .top-bar a { color: #4f8ef7; text-decoration: none; font-size: 14px; }
+        .top-bar a:hover { text-decoration: underline; }
+        .content { max-width: 500px; margin: 60px auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        h1 { color: #333; margin-bottom: 24px; }
+        label { display: block; margin-bottom: 6px; color: #555; font-size: 14px; }
+        input, textarea { width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; box-sizing: border-box; }
+        textarea { height: 100px; resize: vertical; }
+        button { width: 100%; padding: 12px; background: #4f8ef7; color: white; border: none; border-radius: 6px; font-size: 15px; cursor: pointer; }
+        button:hover { background: #2f6fd4; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="/">← 返回首页</a>
+    </div>
+    <div class="content">
+        <h1>📊 页面二</h1>
+        <label>标题</label>
+        <input type="text" placeholder="请输入标题">
+        <label>日期</label>
+        <input type="date">
+        <label>金额</label>
+        <input type="number" placeholder="请输入金额">
+        <label>备注</label>
+        <textarea placeholder="请输入备注内容"></textarea>
+        <button>提 交</button>
+    </div>
+</body>
+</html>
